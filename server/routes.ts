@@ -48,7 +48,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Get current weather and forecast in one call
       const response = await axios.get(`${WEATHERAPI_BASE_URL}/forecast.json`, {
         params: {
-          key: WEATHERAPI_KEY,
+          key: WEATHERAPI_KEY || "",
           q: city,
           days: 7,
           aqi: "yes",
